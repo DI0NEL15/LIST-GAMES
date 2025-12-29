@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>List Pilihan Game</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .category {
+      margin-bottom: 40px;
+    }
+    .category h2 {
+      margin-bottom: 15px;
+    }
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+    .game-card {
+      background: #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .game-card:hover {
+      transform: scale(1.03);
+    }
+    .game-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .game-card p {
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+    @media (max-width: 480px) {
+      .game-card img {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 List Pilihan Game Saya</h1>
+
+  <div style="max-width:600px;margin:0 auto 30px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+    <input id="searchInput" type="text" placeholder="Cari game..." style="flex:1;min-width:220px;padding:10px;border-radius:8px;border:none;outline:none;">
+    <button onclick="filterCategory('all')" style="padding:10px 14px;border-radius:8px;border:none;cursor:pointer;">Semua</button>
+    <button onclick="filterCategory('pc')" style="padding:10px 14px;border-radius:8px;border:none;cursor:pointer;">PC</button>
+    <button onclick="filterCategory('ps2')" style="padding:10px 14px;border-radius:8px;border:none;cursor:pointer;">PS2</button>
+  </div>
+
+  <!-- GAME PC -->
+  <div class="category" data-category="pc">
+    <h2>Game PC</h2>
+    <div class="game-grid">
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=GTA+V" alt="GTA V"><p>GTA V Special Edition</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=PES+2018" alt="PES 2018"><p>Pro Evolution Soccer 2018 (Patch 2025)</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=AC+Odyssey" alt="AC Odyssey"><p>Assassin’s Creed Odyssey</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=AC+III" alt="AC III"><p>Assassin’s Creed III</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=AC+Unity" alt="AC Unity"><p>Assassin’s Creed Unity</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com300x450?text=Black+Flag" alt="Black Flag"><p>Assassin’s Creed IV: Black Flag</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=A+Way+Out" alt="A Way Out"><p>A Way Out</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=ACC" alt="ACC"><p>Assetto Corsa Competizione (2024 Pack)</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Banished" alt="Banished"><p>Banished</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Bully" alt="Bully"><p>Bully: Scholarship Edition (HD)</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=COD+MW" alt="COD MW"><p>Call of Duty: Modern Warfare Remastered</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=CS" alt="Counter Strike"><p>Counter-Strike</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Days+Gone" alt="Days Gone"><p>Days Gone</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Deadpool" alt="Deadpool"><p>Deadpool</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Far+Cry+3" alt="Far Cry 3"><p>Far Cry 3</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Far+Cry+5" alt="Far Cry 5"><p>Far Cry 5</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=FIFA+23" alt="FIFA 23"><p>FIFA 23 Ultimate Edition</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=PES+2021" alt="PES 2021"><p>Pro Evolution Soccer 2021 (FL25 Patch)</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Ghost+Tsushima" alt="Ghost of Tsushima"><p>Ghost of Tsushima</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Watch+Dogs+2" alt="Watch Dogs 2"><p>Watch Dogs 2</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=House+Flipper+2" alt="House Flipper 2"><p>House Flipper 2</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Human+Fall+Flat" alt="Human Fall Flat"><p>Human: Fall Flat</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=It+Takes+Two" alt="It Takes Two"><p>It Takes Two</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Jump+Force" alt="Jump Force"><p>Jump Force</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=WWE+2K19" alt="WWE 2K19"><p>WWE 2K19</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Spider-Man" alt="Spider-Man"><p>Marvel’s Spider-Man Remastered</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=RDR2" alt="RDR2"><p>Red Dead Redemption 2</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=RE4+Remake" alt="RE4 Remake"><p>Resident Evil 4 Remake</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=RE4+HD" alt="RE4 HD"><p>Resident Evil 4 HD Edition</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=RE5" alt="RE5"><p>Resident Evil 5</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Sekiro" alt="Sekiro"><p>Sekiro: Shadows Die Twice</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Sons+Forest" alt="Sons of the Forest"><p>Sons of the Forest</p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Limbo" alt="Limbo"><p>Limbo</p></div>
+    </div>
+  </div>
+
+  <!-- GAME PS2 -->
+  <div class="category" data-category="ps2">
+    <h2>Game PS2</h2>
+    <div class="game-grid">
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=God+of+War" alt="GOW"><p><em>God of War</em></p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=God+of+War+2" alt="GOW2"><p><em>God of War II</em></p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=GTA+SA" alt="GTA SA"><p><em>GTA San Andreas</em></p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Guitar+Hero+3" alt="GH3"><p><em>Guitar Hero III: Legends of Rock</em></p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Jet+Li" alt="Jet Li"><p><em>Jet Li: Rise to Honor</em></p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Smackdown" alt="Smackdown"><p><em>WWE SmackDown! Here Comes the Pain</em></p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Metal+Slug+X" alt="Metal Slug X"><p><em>Metal Slug X</em></p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Naruto+UN5" alt="Naruto UN5"><p><em>Naruto Shippuden: Ultimate Ninja 5</em></p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Sengoku+Basara+2" alt="SB2"><p><em>Sengoku Basara 2</em></p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=The+Warriors" alt="The Warriors"><p><em>The Warriors</em></p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Toy+Story+3" alt="Toy Story 3"><p><em>Toy Story 3</em></p></div>
+      <div class="game-card"><img src="https://via.placeholder.com/300x450?text=Ben+10" alt="Ben 10"><p><em>Ben 10: Protector of Earth</em></p></div>
+    </div>
+  </div>
+    <script>
+    // SEARCH
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', () => {
+      const keyword = searchInput.value.toLowerCase();
+      document.querySelectorAll('.game-card').forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(keyword) ? 'block' : 'none';
+      });
+    });
+
+    // FILTER CATEGORY
+    function filterCategory(type) {
+      document.querySelectorAll('.category').forEach(cat => {
+        if (type === 'all') {
+          cat.style.display = 'block';
+        } else {
+          cat.style.display = cat.dataset.category === type ? 'block' : 'none';
+        }
+      });
+    }
+
+    // SORT A-Z
+    document.querySelectorAll('.game-grid').forEach(grid => {
+      const cards = Array.from(grid.children);
+      cards.sort((a, b) => {
+        const nameA = a.innerText.toLowerCase();
+        const nameB = b.innerText.toLowerCase();
+        return nameA.localeCompare(nameB);
+      });
+      cards.forEach(card => grid.appendChild(card));
+    });
+  </script>
+</body>
+</html>
